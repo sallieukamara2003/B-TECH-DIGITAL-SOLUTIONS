@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B-Tech Digital Solutions  </title>
+
+
+<style>
+/* --- RESET & COLOR VARIABLES FROM FLYER --- */
+•	{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--flyer-red: #e60000; /* Vibrant Red from flyer /
+--flyer-navy: #000c40; / Dark Navy Blue from flyer text /
+--flyer-bg: #f8fa8a; / Soft Off-White / Pale Grey 
+
+Background /
+--white: #ffffff;
+--font-main: 'Poppins', sans-serif;
+--font-script: 'Caveat', cursive; / Script style for "your" and "with us" */
+}
+
+body {
+font-family: var(--font-main);
+background-color: var(--flyer-bg);
+color: var(--flyer-navy);
+overflow-x: hidden;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+transition: all 0.3s ease;
+}
+
+/* --- TOP BAR (CONTACT DETAILS FROM FLYER FOOTER) --- */
+.top-bar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0.6rem 8%;
+background-color: var(--flyer-bg);
+font-size: 0.85rem;
+}
+
+.top-bar-left {
+display: flex;
+align-items: center;
+gap: 1.5rem;
+}
+
+.badge-red {
+background-color: var(--flyer-red);
+color: var(--white);
+
+padding: 0.4rem 1.2rem;
+font-size: 0.85rem;
+font-weight: 800;
+letter-spacing: 0.5px;
+clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.social-links {
+display: flex;
+gap: 1rem;
+}
+
+.social-links a {
+color: var(--flyer-navy);
+font-size: 1rem;
+}
+
+.social-links a:hover {
+color: var(--flyer-red);
+
+}
+
+.top-bar-right {
+display: flex;
+gap: 1.8rem;
+align-items: center;
+}
+
+.info-badge {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+background-color: var(--flyer-navy);
+color: var(--white);
+padding: 0.4rem 1rem;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+}
+
+.info-badge i {
+color: var(--white);
+font-size: 1rem;
+}
+
+/* --- NAVIGATION BAR --- */
+.nav-container {
+max-width: 84%;
+margin: 0 auto;
+background-color: var(--white);
+box-shadow: 0 10px 25px rgba(0, 12, 64, 0.08);
+border-radius: 6px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 1.5rem;
+position: relative;
+z-index: 10;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+font-size: 1.3rem;
+font-weight: 900;
+color: var(--flyer-red);
+padding: 1.2rem 0;
+letter-spacing: -0.5px;
+}
+
+.logo span {
+color: var(--flyer-navy);
+}
+
+.logo-badge {
+background: var(--flyer-navy);
+color: var(--white);
+padding: 0.2rem 0.5rem;
+border-radius: 4px;
+
+font-size: 1rem;
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+align-items: center;
+gap: 1.8rem;
+}
+
+.nav-links a {
+font-size: 0.9rem;
+font-weight: 700;
+color: var(--flyer-navy);
+}
+
+.nav-links a:hover {
+color: var(--flyer-red);
+}
+
+.nav-right {
+display: flex;
+align-items: center;
+gap: 1.2rem;
+}
+
+.btn-contact {
+background-color: var(--flyer-red);
+color: var(--white);
+padding: 0.7rem 1.4rem;
+font-weight: 700;
+font-size: 0.85rem;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+box-shadow: 0 4px 12px rgba(230, 0, 0, 0.3);
+}
+
+.btn-contact:hover {
+background-color: #cc0000;
+
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+display: none;
+font-size: 1.5rem;
+cursor: pointer;
+color: var(--flyer-navy);
+}
+
+/* --- HERO SECTION MATCHING FLYER HEADLINE & CEO --- */
+.hero {
+position: relative;
+padding: 3rem 8% 6rem 8%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: linear-gradient(135deg, #ffffff 0%, #f1f4f9 100%);
+
+overflow: hidden;
+}
+
+.hero-content {
+max-width: 580px;
+z-index: 2;
+}
+
+.hero-brand-tag {
+color: var(--flyer-red);
+font-weight: 900;
+font-size: 1.1rem;
+letter-spacing: 1.5px;
+margin-bottom: 0.5rem;
+text-transform: uppercase;
+}
+
+/* Matching the "Grow your Business Brand with us" styling */
+.hero-title {
+
+font-size: 3.5rem;
+font-weight: 900;
+line-height: 1.1;
+color: var(--flyer-navy);
+margin-bottom: 1.5rem;
+}
+
+.script-text {
+font-family: var(--font-script);
+color: var(--flyer-red);
+font-size: 4rem;
+font-weight: 700;
+display: inline-block;
+margin: 0 0.3rem;
+transform: translateY(4px);
+}
+
+.hero-description {
+color: #444;
+font-size: 1rem;
+
+line-height: 1.6;
+margin-bottom: 2rem;
+font-weight: 500;
+}
+
+.btn-whatsapp {
+display: inline-flex;
+align-items: center;
+gap: 0.6rem;
+background-color: var(--flyer-navy);
+color: var(--white);
+padding: 0.9rem 1.8rem;
+font-weight: 700;
+font-size: 0.95rem;
+border-radius: 4px;
+box-shadow: 0 5px 15px rgba(0, 12, 64, 0.3);
+}
+
+.btn-whatsapp i {
+color: #25d366; /* WhatsApp Green Icon */
+
+font-size: 1.3rem;
+}
+
+.btn-whatsapp:hover {
+background-color: var(--flyer-red);
+}
+
+/* CEO Image Section with Flyer's Red Arch backdrop */
+.hero-image-container {
+position: relative;
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+}
+
+.arch-background {
+position: relative;
+
+background-color: var(--flyer-red);
+border-radius: 200px 200px 0 0; /* Arched shape from flyer */
+padding: 20px 20px 0 20px;
+max-width: 360px;
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+.arch-background img {
+width: 100%;
+height: auto;
+object-fit: cover;
+display: block;
+}
+
+/* CEO Name Badge from flyer */
+.ceo-badge {
+width: 100%;
+
+max-width: 360px;
+background-color: var(--flyer-navy);
+color: var(--white);
+text-align: center;
+padding: 0.6rem 0;
+font-size: 0.9rem;
+font-weight: 800;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-top: -2px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* --- SERVICES SECTION MATCHING THE RED CONTAINER ON FLYER --- */
+.features-container {
+max-width: 84%;
+margin: -2.5rem auto 4rem auto;
+position: relative;
+z-index: 5;
+
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
+}
+
+.feature-card {
+background-color: var(--white);
+padding: 2rem;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+border-left: 5px solid var(--flyer-navy);
+border-radius: 6px;
+transition: transform 0.3s, border-color 0.3s;
+display: flex;
+gap: 1.2rem;
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+border-left-color: var(--flyer-red);
+}
+
+
+/* Main featured card styled like the Red Box on the flyer */
+.feature-card.main-box {
+background-color: var(--flyer-red);
+color: var(--white);
+border-left: none;
+border-radius: 12px;
+}
+
+.feature-card.main-box .feature-text h3 {
+color: var(--white);
+}
+
+.feature-card.main-box .feature-text ul {
+list-style: none;
+margin-top: 0.5rem;
+}
+
+.feature-card.main-box .feature-text li {
+
+font-size: 0.9rem;
+font-weight: 700;
+margin-bottom: 0.4rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.feature-card.main-box .feature-text li i {
+color: var(--white);
+background: #00c853; /* Green checkmark from flyer */
+border-radius: 50%;
+padding: 2px;
+font-size: 0.7rem;
+}
+
+.feature-icon {
+font-size: 2.2rem;
+color: var(--flyer-red);
+
+flex-shrink: 0;
+}
+
+.feature-text h3 {
+font-size: 1.15rem;
+font-weight: 800;
+color: var(--flyer-navy);
+margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+font-size: 0.85rem;
+color: #555;
+line-height: 1.5;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+.top-bar {
+display: none;
+
+}
+
+.nav-container {
+max-width: 92%;
+}
+
+.hero {
+flex-direction: column;
+padding-top: 2rem;
+text-align: center;
+}
+
+.hero-content {
+max-width: 100%;
+margin-bottom: 3rem;
+}
+
+.hero-title {
+font-size: 2.5rem;
+}
+
+
+.script-text {
+font-size: 3rem;
+}
+
+.features-container {
+max-width: 92%;
+grid-template-columns: 1fr;
+margin-top: 2rem;
+}
+}
+
+@media (max-width: 768px) {
+.nav-links, .nav-right {
+display: none;
+}
+
+.menu-toggle {
+display: block;
+}
+
+
+.nav-links.show {
+display: flex;
+flex-direction: column;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background: var(--white);
+padding: 1.5rem;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR (REAL PHONE, FB, & EMAIL FROM FLYER) -->
+<div class="top-bar">
+
+<div class="top-bar-left">
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+<a href="#"><i class="fas fa-envelope"></i></a>
+</div>
+</div>
+<div class="top-bar-right">
+
+
+
+</div>
+</div>
+
+<!-- MAIN NAVIGATION -->
+<header>
+<nav class="nav-container">
+<a href="#" class="logo">
+<div class="logo-badge"><i class="fas fa-laptop-code"><img src="LOGO.png" width="60"></i></div>
+B-TECH <span>DIGITAL SOLUTIONS</span>
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="INDEX.html">Home</a></li>
+<li><a href="our services.html">Our Services</a></li>
+<li><a href="graphics and branding.html">Graphics & Branding</a></li>
+<li><a href="IT SERVICES.html">IT Support</a></li>
+ 
+</ul>
+
+<div class="nav-right">
+<a href="mailto:sallieukamara2003@gmail.com" class="btn-contact">Send us a mail</a>
+</div>
+
+<div class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</div>
+</nav>
+</header>
+
+<!-- HERO SECTION (REAL HEADLINE & CEO SALIEU KAMARA) -->
+<section class="hero">
+<div class="hero-content">
+<p class="hero-brand-tag">B-Tech Digital Solutions</p>
+
+<!-- Headline matching exact flyer styling -->
+<h1 class="hero-title">
+
+Grow <span class="script-text">your</span><br>
+Business<br>
+Brand <span class="script-text">with us</span>
+</h1>
+
+<p class="hero-description">
+We offer professional website designs, software development, graphic branding, print media, and general IT support services to elevate your brand.
+</p>
+
+<a href="https://wa.me/23288877469" target="_blank" class="btn-whatsapp">
+<i class="fab fa-whatsapp"></i> Chat on WhatsApp
+</a>
+
+</div>
+
+
+<!-- CEO Image Container with Red Arch backdrop -->
+
+<div class="hero-image-container">
+<div class="arch-background">
+<!-- Portrait Placeholder for CEO -->
+<img src="MAIN IMAGE.jpg" alt="Sallieu Kamara - CEO & Founder">
+</div>
+ 
+</div>
+
+</section>
+
+<!-- FEATURE CARDS (EXACT SERVICES FROM FLYER) -->
+<section class="features-container">
+
+<!-- Highlight Box (Red Box from Flyer) -->
+<div class="feature-card main-box">
+
+<div class="feature-text">
+<h3>Our Featured Services</h3>
+<ul>
+<li><i class="fas fa-check"></i> Website Design & Development</li>
+<li><i class="fas fa-check"></i> Brochure Design</li>
+<li><i class="fas fa-check"></i> Business Card Design</li>
+<li><i class="fas fa-check"></i> Flyer & Logo Design</li>
+</ul>
+</div>
+</div>
+
+<!-- Additional Service 1 -->
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-palette"></i></div>
+<div class="feature-text">
+
+<h3>Graphics & Branding</h3>
+<p>Custom logos, print-ready media, and full corporate brand identities tailored to your market.</p>
+</div>
+</div>
+
+<!-- Additional Service 2 -->
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-headset"></i></div>
+<div class="feature-text">
+<h3>General IT Support</h3>
+<p>Reliable hardware, software optimization, network troubleshooting, and technical assistance.</p>
+</div>
+</div>
+
+</section>
+
+
+<!-- JavaScript for Mobile Navigation Toggle -->
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+navLinks.classList.toggle('show');
+});
+</script>
+<Center>&copy;B-TECH DIGITAL SOLUTIONS </Center>
+</body>
+</html>
